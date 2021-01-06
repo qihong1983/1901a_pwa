@@ -28,10 +28,21 @@
     "sizes": "144x144",
     "type": "image/png"
     },
+    ,
+    {
+    "src": "imgs/152.png",
+    "sizes": "152x152",
+    "type": "image/png"
+    },
     {
     "src": "imgs/192.png",
     "sizes": "192x192",
     "type": "image/png"
+    },
+    {
+        "src": "imgs/384.png",
+        "sizes": "384x384",
+        "type": "image/png"
     },
     {
     "src": "imgs/256.png",
