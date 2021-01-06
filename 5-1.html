@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="utils/minirefresh.min.css">
+
+
+    <style>
+         html, body {
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul, li {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #18b4fe;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            border-bottom: 1px solid #c8c7cc;
+            background-color: #fff;
+            z-index: 999;
+        }
+
+        .header .navi {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 12px;
+            line-height: 22px;
+        }
+
+        .content {
+        }
+
+        .content .minirefresh-wrap {
+            margin-top: 45px;
+        }
+
+        .content .minirefresh-scroll {
+            background-color: #fff;
+        }
+
+        .content .list-item {
+            margin: 11px 15px;
+        }
+
+        .content .list-item .news-link {
+            display: block;
+            position: relative;
+            padding: 5px 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid #c8c7cc;
+        }
+
+        .content .list-item .news-link .news-title {
+            display: block;
+            height: 35px;
+            overflow: hidden;
+            font-weight: bold;
+            font-size: 15px;
+            color: #000;
+        }
+
+        .content .list-item .news-link .news-date {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- minirefresh开头的class请勿修改 -->
+    <div class="header">
+        <a href="../index.html" class="navi">dashboard</a>
+        ajax 分页示例
+    </div>
+    
+    <div class="content">
+    
+        <div id="minirefresh" class="minirefresh-wrap">
+            <div class="minirefresh-scroll">
+                <ul class="data-list" id="listdata">
+                </ul>
+            </div>
+        </div>
+    
+    </div>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="utils/minirefresh.min.js"></script>
+    <script>
+        
+        var page = 0;
+        // 引入任何一个主题后，都会有一个 MiniRefresh 全局变量
+        var miniRefresh = new MiniRefresh({
+            container: '#minirefresh',
+            down: {
+                isLock: true,
+                callback: function() {
+                    // 下拉事件
+                    console.log('down');
+                    miniRefresh.endDownLoading();
+                }
+            },
+            up: {
+
+                callback: function() {
+                    // 上拉事件
+                    console.log('up');
+
+
+                    doAjax("up");
+                    // 注意，由于默认情况是开启满屏自动加载的，所以请求失败时，请务必endUpLoading(true)，防止无限请求
+                    // miniRefresh.endUpLoading(true);
+                }
+            }
+        });
+
+        function doAjax(downOrUp) {
+            
+            if (downOrUp == "up") {
+                page++;
+            }
+
+            $.ajax({
+                url: 'data/listdata.json',// 请求网址
+                // url: 'data/listdata' + page + '.json',// 请求网址
+                type: 'GET',
+                data: {// 请求参数，一般会带上页码
+                    'page': page,
+                    't': new Date().getTime()// 防止GET请求缓存
+                },
+                success: function (response) {
+                    console.log(11); 
+                    
+                    var arrLen = response.data.length;
+
+                    if (arrLen > 0) {
+                        var html = '';
+                        $.each(response.data, function (key, value) {
+                            html += '<li class="list-item">' +
+                                '<a href="javascript:;" class="news-link">' +
+                                '<span class="news-title">' + value.title + '</span>' +
+                                '<span class="news-date">' + (new Date()).toLocaleString() + '</span>' +
+                                '</a>' +
+                                '</li>';
+                        });
+                        setTimeout(function () { // 使用 setTimeout 函数是方便演示的，你可以不用 setTimeout 函数
+                            if (downOrUp == 'down') {
+                                $('#listdata').html('');
+                                $('#listdata').append(html);// DOM 插入数据
+                                miniRefresh.endDownLoading(true);// 结束下拉刷新
+                            } else {
+                                $('#listdata').append(html);
+                                console.log(response.last_page,'<------response.last_page');
+                                console.log(page,'<------page');
+                                
+                                if (response.last_page == page) {// 是否已取完数据页
+                                    console.log(22);
+                                    // miniRefresh.endUpLoading(true);// 结束上拉加载
+                                    miniRefresh.endUpLoading(true);// 结束上拉加载
+                                } else {
+                                    console.log(33);
+                                    miniRefresh.endUpLoading(false);
+                                }
+                            }
+                        }, 600);
+                    } else {
+                        if (downOrUp == 'down') {
+                            $('#listdata').html('');
+                            miniRefresh.endDownLoading(true);
+                        } else {
+                            console.log(44);
+                            miniRefresh.endUpLoading(true);
+                        }
+                    }
+                }
+            });
+
+
+        }
+
+    </script>
+</body>
+</html>
