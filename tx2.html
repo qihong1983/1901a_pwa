@@ -1,0 +1,23 @@
+1、 读程序,输出结果
+console.log(1);
+setTimeout(function () {
+    console.log(2);
+},0);
+console.log(2);
+
+2、读程序,输出结果
+var a = 1;
+setTimeout(function () {
+    console.log(a);
+},0) 
+console.log(a);
+
+3、 读程序,输出结果
+  for(var i=0; i<10; i++) {
+      (function (w) {
+          setTimeout(function (w) {
+            console.log(w);
+          },1) 
+      })(i)
+  }
+
