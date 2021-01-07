@@ -16,7 +16,9 @@ self.addEventListener('fetch', event => {
     const req = event.request;
 	const url = new URL(req.url);
 	if (url.origin === location.origin) {
-		event.respondWith(cacheFirst(req));
+        // event.respondWith(cacheFirst(req));
+		event.respondWith(networkFirst(req));
+        
 	} else {
 		event.respondWith(networkFirst(req));
 	}
@@ -25,9 +27,24 @@ self.addEventListener('fetch', event => {
 
 
 async function cacheFirst(req) {
-	const cachedResponse = await caches.match(req);
-	// return cachedResponse || fetch(req);
-	return cachedResponse || networkFirst(req);
+
+    // try {
+    //     debugger;
+
+    //     const res = await fetch(req)
+
+    //     console.log(res, 'resres');
+    //     // return fetch(req)
+    //     return res;
+    // }catch(error) {
+        const cachedResponse = await caches.match(req);
+        // return cachedResponse || fetch(req);
+        return cachedResponse || networkFirst(req); 
+    // }
+
+	// const cachedResponse = await caches.match(req);
+	// // return cachedResponse || fetch(req);
+	// return cachedResponse || networkFirst(req);
 }
 
 async function networkFirst(req) {
