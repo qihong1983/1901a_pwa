@@ -45,6 +45,7 @@ body {
     margin-left:0.30rem;
     margin-top:0.14rem;
     display: flex;
+    overflow: hidden;
 }
 
 .pageHeader-center-logo {
@@ -650,6 +651,7 @@ body {
 
 .pageFooter-middle img {
     width:1.2rem;
+    height:1.2rem;
     padding:0.15rem 0;
   
 }
