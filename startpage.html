@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .startPage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        .startPage-logo {
+            width:150px;
+        }
+    </style>
 </head>
 <body>
-    <div>APP启动画面</div>
+    <div class="startPage">
+        <img class="startPage-logo" src="imgs/JDtunch.png" />
+    </div>
     <script>
-        setTimeout(()=> {
-            window.location.href= "/index.html";
-        }, 3000)
+        // setTimeout(()=> {
+        //     window.location.href= "/index.html";
+        // }, 3000)
     </script>
 </body>
 </html>

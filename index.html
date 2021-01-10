@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- <title>Document</title> -->
+    <title>多快好省，购物上京东！</title>
+
+    
     <link rel="manifest" href="/manifest.json" />
     <!-- Standard iPhone -->
     <link rel="apple-touch-icon" sizes="57x57" href="imgs/icon-114x114.png" />
@@ -14,13 +17,564 @@
     <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad-144.png" />
     <!-- Retina iPad -->
     <link rel="apple-touch-icon" sizes="144x144" href="touch-icon-ipad-144.png" />
+    <link rel="stylesheet" href="style/normalize.css">
+
+    <link rel="stylesheet" href="css/swiper.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        // setTimeout(() => {
+        //     document.querySelector("body").style.display = "block";
+        // }, 500)
+
+
+        window.addEventListener('scroll', function (e) {
+            console.log('<----');
+            if (window.scrollY == 0) {
+                document.querySelector(".pageHeader").className = "pageHeader";
+            } else {
+                document.querySelector(".pageHeader").className = "pageHeader attrRed";
+            }
+        })
+
+    </script>
 </head>
 
-<body>
-    <div>
-        JD首页<a href="/6-1.html">进入6-0111110212212</a>
+
+<body style="display:none">
+
+    <!-- 页头 begin -->
+    <div class="pageHeader">
+        <div class="pageHeader-left">
+            <a href="javascript:void(0)">
+                <img src="imgs/index-menu.png" />
+            </a>
+        </div>
+        <div class="pageHeader-center">
+            <div class="pageHeader-center-logo">
+
+            </div>
+            <div class="pageHeader-center-shuxian">
+            </div>
+            <div class="pageHeader-center-searchIcon">
+            </div>
+            <div class="pageHeader-center-searchText">
+                <input placeholder="飞利浦空气净化器" />
+            </div>
+        </div>
+        <div class="pageHeader-right">
+            <a href="javascript:void(0)">
+                <img src="imgs/index-user.png" />
+            </a>
+        </div>
     </div>
-    <script src="js/vconsole.min.js"></script>
+    <!-- 页头 end -->
+
+    <!-- 背景图 begin -->
+    <div class="topBgWrap">
+        <div class="topBg">
+
+        </div>
+    </div>
+    <!-- 背景图 end -->
+
+    <!-- <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容1</p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容2</p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容3</p>
+            </div>
+        </div>
+     
+    </div> -->
+
+
+    <!-- 轮播图 begin -->
+    <div class="sliderOne swiper-container">
+        <div class="sliderOne-wrap swiper-wrapper">
+            <div class="sliderOne-wrap-item swiper-slide">
+                <a href="javascript:void(0)">
+                    <img src="imgs/index-upload1.jpg" alt="##">
+                </a>
+            </div>
+            <div class="sliderOne-wrap-item swiper-slide">
+                <a href="javascript:void(0)">
+                    <img src="imgs/index-upload2.jpg" alt="##">
+                </a>
+            </div>
+            <div class="sliderOne-wrap-item swiper-slide">
+                <a href="javascript:void(0)">
+                    <img src="imgs/index-upload3.jpg" alt="##">
+                </a>
+            </div>
+        </div>
+
+        <div class="sliderOne-actions swiper-pagination">
+            <div class="item active"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <!-- 轮播图 end -->
+
+    <!-- 轮播列表 begin -->
+    <div class="sliderList">
+        <div class="sliderList-wrap">
+            <div class="sliderList-wrap-item">
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.webp" />
+                    <span>京东超市</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-2.webp" />
+                    <span>数码电器</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-3.webp" />
+                    <span>京东服饰</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-4.webp" />
+                    <span>京东生鲜</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.webp" />
+                    <span>京东超市</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.webp" />
+                    <span>京东超市</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-2.webp" />
+                    <span>数码电器</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-3.webp" />
+                    <span>京东服饰</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-4.webp" />
+                    <span>京东生鲜</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.webp" />
+                    <span>京东超市</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="sliderList-actions">
+            <div class="item active"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <!-- 轮播列表 end -->
+
+    <!-- block1 begin -->
+    <div class="block1">
+        <div class="block1-item">
+            <div class="block1-item-strong">
+
+            </div>
+            <div class="block1-item-text">
+                正品直郵
+            </div>
+            <div class="block1-item-img">
+                <img src="imgs/index-block1-1.jpg" />
+            </div>
+
+        </div>
+        <div class="block1-item">
+            <div class="block1-item-strong">
+                来电好货
+            </div>
+            <div class="block1-item-text">
+                3C大放价
+            </div>
+            <div class="block1-item-img">
+                <img src="imgs/index-block1-2.jpg" />
+            </div>
+        </div>
+        <div class="block1-item">
+            <div class="block1-item-strong">
+                来电好货
+            </div>
+            <div class="block1-item-text">
+                国货正当时
+            </div>
+            <div class="block1-item-img">
+                <img src="imgs/index-block1-3.jpg" />
+            </div>
+        </div>
+        <div class="block1-item">
+            <div class="block1-item-strong">
+
+            </div>
+            <div class="block1-item-text">
+                都是你爱的
+            </div>
+            <div class="block1-item-img">
+                <img src="imgs/index-block1-4.jpg" />
+            </div>
+        </div>
+    </div>
+    <!-- block1 end -->
+
+    <!-- block2 begin -->
+    <div class="block2">
+        <div class="block2-hd">
+            <div class="block2-hd-title">京东秒杀</div>
+            <div class="block2-hd-more">更多秒杀</div>
+        </div>
+        <div class="block2-list">
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/156900/13/4925/169390/5ff7fa51Ea186d96d/b0a4b60478152be7.jpg.dpg" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+
+
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1993/346/2023441546/108622/171ff48a/569762cdNbf6a6353.jpg.dpg" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+
+
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/158130/35/2104/81560/5ff6ac18E951c4c5a/cae9ca827e0200a5.png.webp" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+
+
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/156900/13/4925/169390/5ff7fa51Ea186d96d/b0a4b60478152be7.jpg.dpg" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/167359/7/1410/178209/5ff6cd8aE792c3b59/40c767d48b421d93.jpg.dpg" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+            <div class="block2-list-item">
+                <div class="block2-list-item-img">
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/156900/13/4925/169390/5ff7fa51Ea186d96d/b0a4b60478152be7.jpg.dpg" />
+                </div>
+                <div class="block2-list-item-price">
+                    ¥999
+                </div>
+                <div class="block2-list-item-oldPrice">
+                    ¥2628
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- block2 end -->
+
+    <!-- block3 begin -->
+    <div class="block3">
+        <div class="block3-item">
+            <div class="block3-item-box">
+                <h3>家用健身</h3>
+                <p>健身减肥塑形塑身</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/163523/32/1574/138619/5ff76148Ee2d856fe/da4f461f442e5da8.jpg!q70.jpg.dpg" />
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/163523/32/1574/138619/5ff76148Ee2d856fe/da4f461f442e5da8.jpg!q70.jpg.dpg" />
+                </div>
+
+            </div>
+            <div class="block3-item-box">
+                <h3>享受世界</h3>
+                <p>鱼缸畅游世界</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/114919/7/823/41078/5e90511eE8989d8cd/1c5633ec5f448d51.jpg!q70.jpg.dpg" />
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t10912/80/2771788717/32392/57372dcd/5cd91b0aN3f6bda1a.jpg!q70.jpg.dpg" />
+                </div>
+            </div>
+        </div>
+        <div class="block3-item">
+            <div class="block3-item-box">
+                <h3>家用健身</h3>
+                <p>魅力演绎</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/163523/32/1574/138619/5ff76148Ee2d856fe/da4f461f442e5da8.jpg!q70.jpg.dpg" />
+                </div>
+
+            </div>
+            <div class="block3-item-box">
+                <h3>享受世界</h3>
+                <p>魅力演绎</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/114919/7/823/41078/5e90511eE8989d8cd/1c5633ec5f448d51.jpg!q70.jpg.dpg" />
+                </div>
+            </div>
+            <div class="block3-item-box">
+                <h3>享受世界</h3>
+                <p>魅力演绎</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/114919/7/823/41078/5e90511eE8989d8cd/1c5633ec5f448d51.jpg!q70.jpg.dpg" />
+                </div>
+            </div>
+            <div class="block3-item-box">
+                <h3>享受世界</h3>
+                <p>魅力演绎</p>
+                <div class="block3-item-box-imgWrap">
+                    <img
+                        src="//m.360buyimg.com/mobilecms/s150x150_jfs/t1/114919/7/823/41078/5e90511eE8989d8cd/1c5633ec5f448d51.jpg!q70.jpg.dpg" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- block3 end -->
+
+
+    <!-- block4 begin -->
+
+    <div class="block4">
+        <div class="block4-item">
+            <div class="block4-item-hd">
+                <img
+                    src="//img13.360buyimg.com/mobilecms/s372x372_jfs/t1/65337/16/11190/384961/5d89955cEec0a4361/0cdba826bbf88af5.jpg!q70.dpg.webp" />
+            </div>
+            <div class="block4-item-bd">
+                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+            </div>
+            <div class="block4-item-ft">
+                <div class="price">
+                    ¥838
+                </div>
+                <div class="lookBtn">
+                    看相似
+                </div>
+            </div>
+        </div>
+
+
+        <div class="block4-item">
+            <div class="block4-item-hd">
+                <img
+                    src="//img10.360buyimg.com/mobilecms/s372x372_jfs/t1/117459/24/11972/176157/5f068bc7E7252d4cf/aa9de748cc14a763.jpg!q70.dpg.webp" />
+            </div>
+            <div class="block4-item-bd">
+                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+            </div>
+            <div class="block4-item-ft">
+                <div class="price">
+                    ¥838
+                </div>
+                <div class="lookBtn">
+                    看相似
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="block4-item">
+            <div class="block4-item-hd">
+                <img
+                    src="//img13.360buyimg.com/mobilecms/s372x372_jfs/t24808/315/2194372712/128502/df40da4e/5bc5b9d3N20c08bcd.jpg!q70.dpg.webp" />
+            </div>
+            <div class="block4-item-bd">
+                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+            </div>
+            <div class="block4-item-ft">
+                <div class="price">
+                    ¥838
+                </div>
+                <div class="lookBtn">
+                    看相似
+                </div>
+            </div>
+        </div>
+
+
+        <div class="block4-item">
+            <div class="block4-item-hd">
+                <img
+                    src="//img14.360buyimg.com/mobilecms/s372x372_jfs/t1/163476/6/913/208239/5ff336b4E46a62afd/967dc870f7e650a2.jpg!q70.dpg.webp" />
+            </div>
+            <div class="block4-item-bd">
+                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+            </div>
+            <div class="block4-item-ft">
+                <div class="price">
+                    ¥838
+                </div>
+                <div class="lookBtn">
+                    看相似
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="pageFooter">
+        <div class="pageFooter-top">
+            <span class="user">用户名</span>
+            <span class="user">退出</span>
+            <span class="user">客户服务</span>
+            <span class="user">返回顶部</span>
+        </div>
+        <div class="pageFooter-middle">
+            <img src="//m.360buyimg.com/mobilecms/jfs/t16423/186/2517573622/5186/75a541f7/5ab1c0deN947bdcba.png">
+            <img src="//m.360buyimg.com/mobilecms/jfs/t18550/294/898388074/6574/3a8c5413/5ab0b8e9Ne9c48331.png">
+            <img src="//m.360buyimg.com/mobilecms/jfs/t14581/218/2689195961/4696/203b872a/5ab1c0f2N51c3f1bb.png">
+        </div>
+
+        <div class="pageFooter-bottom">
+            Copyright © 2004-2020 京东JD.com 版权所有
+        </div>
+
+    </div>
+
+    <!-- block4 end -->
+
+    <div class="tarbar">
+        <div class="tarbar-item">
+            <img
+                src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/67550/26/12426/5094/5d9c4b13Eea435a3f/81328b0609c60a3c.png">
+        </div>
+
+        <div class="tarbar-item">
+            <img
+                src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/56507/6/12787/3168/5d9c4b12Ef363dd8d/4af32f42575509d8.png">
+        </div>
+
+        <div class="tarbar-item">
+            <img
+                src="https://img12.360buyimg.com/img/s130x100_jfs/t1/152922/39/13124/3525/5ff2ae9eE4a0a7636/a161ad4f4d2bb5ea.png">
+        </div>
+
+        <div class="tarbar-item">
+            <img
+                src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/64954/4/12406/3529/5d9c4b12Ee7a82735/f2fe0a88bf344736.png">
+        </div>
+
+        <div class="tarbar-item">
+            <img
+                src="https://img11.360buyimg.com/jdphoto/s130x100_jfs/t1/56206/13/12652/2957/5d9c4b13E503bcd76/1c8543653685e80e.png">
+        </div>
+    </div>
+
+    <!-- <h1>京东</h1> -->
+
+    <!-- <script src="js/jquery-1.11.1.js"></script> -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.8.3/jquery.js"></script> -->
+    <!-- <script src="js/vconsole.min.js"></script> -->
+    <script src="js/swiper.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script> -->
+    <script src="js/index.js"></script>
+    <script>
+
+
+
+window.onload=function(){
+
+
+       setTimeout(() => {
+            document.querySelector("body").style.display = "block";
+            var mySwiper = new Swiper('.swiper-container', {
+            // direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            autoplay: {
+                disableOnInteraction: false,  //触碰后自动轮播也不会停止
+                delay: 2500,
+            },
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+          
+
+            
+        })
+
+        }, 500)
+
+
+
+
+    }
+        var I = new Index();
+        I.init();
+    </script>
     <script>
         /* 判断当前浏览器是否支持serviceWorker */
         if ('serviceWorker' in navigator) {
@@ -41,9 +595,10 @@
         }
 
         // 初始化
-    var vConsole = new VConsole();
-    console.log('Hello world');
+        // new VConsole();
+
     </script>
+
 </body>
 
 </html>
