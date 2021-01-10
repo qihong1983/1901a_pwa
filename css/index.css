@@ -81,6 +81,7 @@ body {
 }
 
 .pageHeader-center-searchText input {
+    width:4.46rem;
     height: 0.44rem;
     border: none;
     background: #f7f7f7;
