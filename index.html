@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <!-- <title>Document</title> -->
     <title>多快好省，购物上京东！</title>
 
-    
+
     <link rel="manifest" href="/manifest.json" />
     <!-- Standard iPhone -->
     <link rel="apple-touch-icon" sizes="57x57" href="imgs/icon-114x114.png" />
@@ -18,6 +18,9 @@
     <!-- Retina iPad -->
     <link rel="apple-touch-icon" sizes="144x144" href="touch-icon-ipad-144.png" />
     <link rel="stylesheet" href="style/normalize.css">
+
+    <!-- 滚动加载  -->
+    <link rel="stylesheet" href="utils/minirefresh.min.css" />
 
     <link rel="stylesheet" href="css/swiper.css">
 
@@ -36,27 +39,13 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
 
-        // setTimeout(() => {
-        //     document.querySelector("body").style.display = "block";
-        // }, 500)
-
-
-        window.addEventListener('scroll', function (e) {
-            console.log('<----');
-            if (window.scrollY == 0) {
-                document.querySelector(".pageHeader").className = "pageHeader";
-            } else {
-                document.querySelector(".pageHeader").className = "pageHeader attrRed";
-            }
-        })
-
     </script>
 </head>
 
 
 <body style="display:none">
 
-  
+
 
     <!-- 页头 begin -->
     <div class="pageHeader">
@@ -93,20 +82,7 @@
     </div>
     <!-- 背景图 end -->
 
-    <!-- <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容1</p>
-            </div>
-            <div class="swiper-slide">
-                <p class="ani" swiper-animate-effect="flipInY" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容2</p>
-            </div>
-            <div class="swiper-slide">
-                <p class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容3</p>
-            </div>
-        </div>
-     
-    </div> -->
+
 
 
     <!-- 轮播图 begin -->
@@ -137,10 +113,60 @@
     </div>
     <!-- 轮播图 end -->
 
+
+
     <!-- 轮播列表 begin -->
-    <div class="sliderList">
-        <div class="sliderList-wrap">
-            <div class="sliderList-wrap-item">
+    <div class="sliderList  swiper-container1">
+        <div class="sliderList-wrap swiper-wrapper">
+            <div class="sliderList-wrap-item swiper-slide">
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.png" />
+                    <span>京东超市</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-2.png" />
+                    <span>数码电器</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-3.png" />
+                    <span>京东服饰</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-4.png" />
+                    <span>京东生鲜</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-1.png" />
+                    <span>京东超市</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-2.png" />
+                    <span>数码电器</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-3.png" />
+                    <span>京东服饰</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-4.png" />
+                    <span>京东生鲜</span>
+                </div>
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-3.png" />
+                    <span>京东服饰</span>
+                </div>
+
+                <div class="sliderList-wrap-item-box">
+                    <img src="imgs/index-slider-4.png" />
+                    <span>京东生鲜</span>
+                </div>
+            </div>
+
+            <div class="sliderList-wrap-item swiper-slide">
                 <div class="sliderList-wrap-item-box">
                     <img src="imgs/index-slider-1.png" />
                     <span>京东超市</span>
@@ -190,7 +216,7 @@
         </div>
 
 
-        <div class="sliderList-actions">
+        <div class="sliderList-actions swiper-pagination1">
             <div class="item active"></div>
             <div class="item"></div>
         </div>
@@ -285,7 +311,8 @@
 
             <div class="block2-list-item">
                 <div class="block2-list-item-img">
-                    <img src="//img11.360buyimg.com/n7/s150x150_jfs/t1/76510/16/2950/178281/5d1427fcE44b8ecf9/c8be352813519ffc.jpg.dpg" />
+                    <img
+                        src="//img11.360buyimg.com/n7/s150x150_jfs/t1/76510/16/2950/178281/5d1427fcE44b8ecf9/c8be352813519ffc.jpg.dpg" />
                 </div>
                 <div class="block2-list-item-price">
                     ¥999
@@ -398,92 +425,91 @@
 
         </div>
     </div>
-    <!-- block3 end -->
+ 
 
-
-    <!-- block4 begin -->
-
-    <div class="block4">
-        <div class="block4-item">
-            <div class="block4-item-hd">
-                <img src="imgs/index-user-upload1.png" />
-            </div>
-            <div class="block4-item-bd">
-                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
-            </div>
-            <div class="block4-item-ft">
-                <div class="price">
-                    ¥838
+    <div class="block4" >
+        <div class="block4-bd" id="block4">
+            <!-- <div class="block4-item">
+                <div class="block4-item-hd">
+                    <img src="imgs/index-user-upload1.png" />
                 </div>
-                <div class="lookBtn">
-                    看相似
+                <div class="block4-item-bd">
+                    <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+                </div>
+                <div class="block4-item-ft">
+                    <div class="price">
+                        ¥838
+                    </div>
+                    <div class="lookBtn">
+                        看相似
+                    </div>
                 </div>
             </div>
+    
+    
+            <div class="block4-item">
+                <div class="block4-item-hd">
+                    <img src="imgs/index-user-upload2.png" />
+                </div>
+                <div class="block4-item-bd">
+                    <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+                </div>
+                <div class="block4-item-ft">
+                    <div class="price">
+                        ¥838
+                    </div>
+                    <div class="lookBtn">
+                        看相似
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="block4-item">
+                <div class="block4-item-hd">
+                    <img src="imgs/index-user-upload3.png" />
+                </div>
+                <div class="block4-item-bd">
+                    <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+                </div>
+                <div class="block4-item-ft">
+                    <div class="price">
+                        ¥838
+                    </div>
+                    <div class="lookBtn">
+                        看相似
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="block4-item">
+                <div class="block4-item-hd">
+                    <img src="imgs/index-user-upload4.png" />
+                </div>
+                <div class="block4-item-bd">
+                    <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
+                </div>
+                <div class="block4-item-ft">
+                    <div class="price">
+                        ¥838
+                    </div>
+                    <div class="lookBtn">
+                        看相似
+                    </div>
+                </div>
+            </div> -->
         </div>
-
-
-        <div class="block4-item">
-            <div class="block4-item-hd">
-                <img
-                    src="imgs/index-user-upload2.png" />
-            </div>
-            <div class="block4-item-bd">
-                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
-            </div>
-            <div class="block4-item-ft">
-                <div class="price">
-                    ¥838
-                </div>
-                <div class="lookBtn">
-                    看相似
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="block4-item">
-            <div class="block4-item-hd">
-                <img
-                    src="imgs/index-user-upload3.png" />
-            </div>
-            <div class="block4-item-bd">
-                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
-            </div>
-            <div class="block4-item-ft">
-                <div class="price">
-                    ¥838
-                </div>
-                <div class="lookBtn">
-                    看相似
-                </div>
-            </div>
-        </div>
-
-
-        <div class="block4-item">
-            <div class="block4-item-hd">
-                <img
-                    src="imgs/index-user-upload4.png" />
-            </div>
-            <div class="block4-item-bd">
-                <h3><span>京东超市</span>MG macy gray奢侈品腰带鳄鱼皮皮带男商务不锈钢捷豹板扣非愛马仕男士皮带M-lv71款 金扣棕带 115CM</h3>
-            </div>
-            <div class="block4-item-ft">
-                <div class="price">
-                    ¥838
-                </div>
-                <div class="lookBtn">
-                    看相似
-                </div>
-            </div>
+        <div class="block4-ft" id="block4-ft">
+            加载中
         </div>
 
 
     </div>
 
-    
-    <div class="pageFooter">
+
+    <div class="pageFooter" id="pageFooter">
         <div class="pageFooter-top">
             <span class="user">用户名</span>
             <span class="user">退出</span>
@@ -532,44 +558,16 @@
 
     <!-- <h1>京东</h1> -->
 
-    <!-- <script src="js/jquery-1.11.1.js"></script> -->
+    <script src="js/jquery-1.11.1.js"></script>
     <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.8.3/jquery.js"></script> -->
     <!-- <script src="js/vconsole.min.js"></script> -->
     <script src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="utils/minirefresh.min.js"></script>
+
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script> -->
     <script src="js/index.js"></script>
     <script>
-
-
-
-window.onload=function(){
-
-
-       setTimeout(() => {
-            document.querySelector("body").style.display = "block";
-            var mySwiper = new Swiper('.swiper-container', {
-            // direction: 'vertical', // 垂直切换选项
-            loop: true, // 循环模式选项
-            autoplay: {
-                disableOnInteraction: false,  //触碰后自动轮播也不会停止
-                delay: 2500,
-            },
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-          
-
-            
-        })
-
-        }, 500)
-
-
-
-
-    }
+        //执行页面js
         var I = new Index();
         I.init();
     </script>
@@ -593,7 +591,7 @@ window.onload=function(){
         }
 
         // 初始化
-        // new VConsole();
+        new VConsole();
 
     </script>
 

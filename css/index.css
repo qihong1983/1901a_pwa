@@ -4,6 +4,7 @@ body {
     background:#f6f6f6;
     margin-top:0.88rem;
 }
+img, a { -webkit-touch-callout: none;}
 /* 页头 */
 .pageHeader {
     width:7.5rem;
@@ -30,6 +31,7 @@ body {
     display: flex;
     align-items: center;
     margin-left:0.3rem;
+    -webkit-tap-highlight-color:transparent;
 }
 .pageHeader-left a img {
     width:0.40rem;
@@ -104,6 +106,7 @@ body {
     height:0.44rem;
     display: flex;
     align-items: center;
+    -webkit-tap-highlight-color:transparent;
 }
 
 .pageHeader-right a img {
@@ -241,6 +244,7 @@ body {
     height: 3.24rem;
     background-size: 7.5rem 3.24rem;
     margin-top: 0.06rem;
+    overflow: hidden;
 }
 
 
@@ -576,6 +580,9 @@ body {
 
 
 
+
+
+
 .block4-item-ft  .lookBtn {
     /* display: block; */
     /* position: absolute;
@@ -598,6 +605,28 @@ body {
     margin-top:0.04rem;
     padding: 0 0.1rem;
 }
+
+
+.block4-bd {
+    display: flex;
+    flex-wrap: wrap;
+    width:7.1rem;
+    justify-content: space-between;
+}
+
+
+.block4-ft {
+    text-align:center;
+    color: #848689;
+    font-size: 3.73333vw;
+    width:7.1rem;
+    height:0.54rem;
+}
+
+
+/* .minirefresh-wrap {
+    position: relative;
+} */
 
 
 /* 页尾 */
@@ -693,6 +722,7 @@ margin-top:1rem;
 .tarbar-item img {
     width:1.2rem;
 }
+
 
 
 
