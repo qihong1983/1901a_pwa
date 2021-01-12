@@ -5,28 +5,28 @@
     "data": [
         {
             "id": 1,
-            "img": "/imgs/index-user-upload1.png",
+            "img": "https://24os.cn/imgs/index-user-upload1.png",
             "type": 1, 
             "title": "三只松鼠鸭脖 休闲零食 鸭肉干肉脯 卤味零食小吃 鸭脖子甜辣味154g",
             "price": 69.9
         },
         {
             "id": 2,
-            "img": "/imgs/index-user-upload2.png",
+            "img": "https://24os.cn/imgs/index-user-upload2.png",
             "type": 1, 
             "title": "三只松鼠鸭脖 休闲零食 鸭肉干肉脯 卤味零食小吃 鸭脖子甜辣味154g",
             "price": 69.9
         },
         {
             "id": 3,
-            "img": "/imgs/index-user-upload3.png",
+            "img": "https://24os.cn/imgs/index-user-upload3.png",
             "type": 1, 
             "title": "三只松鼠鸭脖 休闲零食 鸭肉干肉脯 卤味零食小吃 鸭脖子甜辣味154g",
             "price": 69.9
         },
         {
             "id": 4,
-            "img": "/imgs/index-user-upload4.png",
+            "img": "https://24os.cn/imgs/index-user-upload4.png",
             "type": 1, 
             "title": "三只松鼠鸭脖 休闲零食 鸭肉干肉脯 卤味零食小吃 鸭脖子甜辣味154g",
             "price": 69.9
